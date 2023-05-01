@@ -113,10 +113,9 @@ favMovies.unshift("The Godfather"); // this put "The Godfather back into the lis
 console.log(favMovies);
 
 const index3= favMovies.indexOf("Django Unchained");
-if (index3 > -1) {
     favMovies.splice(index3, 1); //SPLICE for removing SLICE for inserting
     favMovies.push("Avatar");
-}
+
 console.log(favMovies)
 
 const middleIndex = Math.floor(favMovies.length / 2); // find the middle index
@@ -127,16 +126,25 @@ console.log(favMovies); // it never replaces the OG array it just prints a copy 
 
 console.log(favMovies.indexOf("Fast and Furious")); // i got back 14 as an output and from my research that is because the console log is searching the OG array and not the altered array
 
-// Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
-// I was able to change the variable using const because it was an array. array or an object you can stil modifty its properties and elements 
-
-
-
-
+// Thought question: that we declared the variagit ble favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
+// I was able to change the variable using const because it was an array. array or an object you can still modify its properties and elements 
 ////////////////////////////////
 // Where is Waldo
 ////////////////////////////////
-
+// With the following multi-dimensional array
+const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+                    ["Lucinda", "Jacc", "Neff", "Snoop"],
+                    ["Petunia", ["Baked Goods", "Waldo"]]];
+// Remove Eggbert (hint look at the slice/splice method(s))
+// whereIsWaldo.splice (1, 1);
+// or 
+const indexEggbert = whereIsWaldo.indexOf("Eggbert");
+    whereIsWaldo.splice(indexEggbert, 1); // whereIsWaldo.splice(whereIsWaldo.indexOf("Eggbert"), 1); lines 139 and 140 combined
+// Change "Neff" to "No One"
+whereIsWaldo[1][2] = "No One"; //[1][2] comes from the updated array after "Eggbert" was removed
+console.log(whereIsWaldo);
+// Access and console.log "Waldo"
+console.log(whereIsWaldo[2][1][1]);
 ////////////////////////////////
 //  Excited Kitten
 ////////////////////////////////
