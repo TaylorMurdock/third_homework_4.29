@@ -21,12 +21,44 @@ for(let i=0; i<=200; i++) {
 // If a number is divisible by 5 log "Buzz" instead of the number.
 // If a number is divisible by 3 and 5 log "FizzBuzz" instead of the number.
 ////////////////////////////////
-for (let i=1; 1<=100; i++) {
-    console.log(i)
+//NOTE:START WITH THE MOST COMPLICATED THEN WORK TOWARDS THE SIMPLEST
+for (let i=1; i<=100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if ( i % 5 === 0) {  
+        console.log("Buzz");
+    } else if ( i % 3 === 0) {
+        console.log ("Frizz");
+    } else {
+        console.log (i);
+    }
 }
 ////////////////////////////////
 // Wild Wild Life
+// Use the following arrays to answer the questions below (name,species ,age, hometown): You should be modifying the elements by accessing them. It is up to you which methods to use.
+// Plantee just had her birthday; change Plantee's array to reflect her being a year older.
+// Change Wolfy's hometown from "Yukon Territory" to "Gotham City".
+// Give D'Art a second hometown by adding "Hawkins"
+// Porgee decides that Wolfy can't be named "Wolfy" anymore. Remove "Wolfy" from the wolfy array and replace it with "Gameboy".
 ////////////////////////////////
+const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
+const sharky = ["Sharky", "shark", 20, "Left Coast"]
+const plantee = ["Plantee", "plant",  5000 , "Mordor"]
+const porgee = ["Porgee", "Porg", 186, "Ahch-To"]
+const dart = ["D'Art" , "Demogorgan Dog", 2, "Upside Down"]
+
+plantee[2]++;
+console.log(plantee);
+
+wolfy[3] = "Gothem City";
+wolfy[0] = "Gameboy";
+console.log(wolfy);
+
+dart[3] = "Upside Down and Hawkins";
+console.log(dart);
+
+
+
 
 ////////////////////////////////
 // Yell at the Ninja Turtles
