@@ -144,10 +144,34 @@ const indexEggbert = whereIsWaldo.indexOf("Eggbert");
 whereIsWaldo[1][2] = "No One"; //[1][2] comes from the updated array after "Eggbert" was removed
 console.log(whereIsWaldo);
 // Access and console.log "Waldo"
+
+function findIndexNestedArrays(arr, x) {
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      const result = findIndexNestedArrays(arr[i], x);
+      if (result !== -1) {
+        return [i, ...result];
+      }
+    } else if (arr[i] === x) {
+      return [i];
+    }
+  }
+  return -1;
+}
+
+console.log(findIndexNestedArrays(whereIsWaldo, 'Waldo'))
+
+// Code above finds index of Waldo in the array which is [2][1][1]
+
 console.log(whereIsWaldo[2][1][1]);
 ////////////////////////////////
 //  Excited Kitten
+// Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
+// For every even number in your loop, log "...human...why you taking pictures of me?...", "...the catnip made me do it...", or "...why does the red dot always get away..." at random.
 ////////////////////////////////
+
+
+
 
 ////////////////////////////////
 //  Find the Median
