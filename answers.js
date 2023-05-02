@@ -170,7 +170,20 @@ console.log(whereIsWaldo[2][1][1]);
 // For every even number in your loop, log "...human...why you taking pictures of me?...", "...the catnip made me do it...", or "...why does the red dot always get away..." at random.
 ////////////////////////////////
 
-
+ for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    const randomPhrases = [
+      "...human...why you taking pictures of me?...",
+      "...the catnip made me do it...",
+      "...why does the red dot always get away..."
+    ];
+    const randomIndex = Math.floor(Math.random() * randomPhrases.length);
+    console.log(randomPhrases[randomIndex]);
+  } else {
+    console.log("Love me, pet me! HSSSSSS!");
+  }
+}
+// Need to study .floor methods and .random
 
 
 ////////////////////////////////
