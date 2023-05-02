@@ -188,4 +188,21 @@ console.log(whereIsWaldo[2][1][1]);
 
 ////////////////////////////////
 //  Find the Median
+// Find the median number in the following nums array, then console.log that number.
+// hint if you check the length of the array / 2, you might get not get a whole number. In which case, look into Math.floor( // something )
+// const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
 ////////////////////////////////
+
+const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+nums.sort((a, b) => a - b); // sort the array in ascending order
+
+const len = nums.length;
+const mid = Math.floor(len / 2); // check if the length of the array is odd or even
+ if (len % 2 === 0) { // if the length of the array is even then ...
+    const median = (nums[mid - 1] + nums[mid]) / 2; // calculate the average of the two values at the middle indices ((middle num subtracted by 1 plus middle num) divided by 2)
+    console.log(`The median value of the array is ${median}`); 
+ } else {
+    const median = nums[mid]; // if not even then median equals middle number
+    console.log(`The median value of the array is ${median}`);
+ }
+
