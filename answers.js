@@ -47,7 +47,7 @@ const plantee = ["Plantee", "plant",  5000 , "Mordor"]
 const porgee = ["Porgee", "Porg", 186, "Ahch-To"]
 const dart = ["D'Art" , "Demogorgan Dog", 2, "Upside Down"]
 
-plantee[2]++;
+plantee[2]+=1; 
 console.log(plantee);
 
 wolfy[3] = "Gothem City";
@@ -65,7 +65,7 @@ console.log(dart);
 /// USED ALOT OF RESEARCH FOR THIS
 const ninjaTurtles = ["Donatello", "Leonardo", "Raphael", "Michelangelo"]
 for ( let str of ninjaTurtles) {
-    const upperCaseStr = str.toUpperCase();
+    const upperCaseStr = str.toUpperCase(); //str is taking each element withing the array and .toUpperCase is take that uppercase the array
     console.log(upperCaseStr);
 }
 ////////////////////////////////
@@ -74,13 +74,12 @@ for ( let str of ninjaTurtles) {
 // Here is a list of favMovies:
 // Console log: the index of Titanic
 // Do the following and console.log the final results (I have included some thought questions, you don't have to write out an answer for those marked as such):
-// use the .sort method Thought question: what did this do to the array? Did it permanently alter it?
-// Use the method pop
+
+
 // push "Guardians of the Galaxy"
 // Reverse the array
 // Use the shift method
 // unshift - what does it return?
-// splice "Django Unchained" and add "Avatar" (try finding the index of "Django Unchained", instead of counting it yourself) Thought question: did this permanently alter our array?
 // slice the last half of the array (challenge yourself and try to programatically determine the middle of the array rather than counting it and hard coding it) - Thought question: did this permanently alter our array?
 // store the value of your slice in a variable, console.log it - Thought question: what is going on here?
 // console.log your final results
@@ -112,6 +111,7 @@ console.log(favMovies);
 favMovies.unshift("The Godfather"); // this put "The Godfather back into the list and in front"
 console.log(favMovies);
 
+// splice "Django Unchained" and add "Avatar" (try finding the index of "Django Unchained", instead of counting it yourself) Thought question: did this permanently alter our array?
 const index3= favMovies.indexOf("Django Unchained");
     favMovies.splice(index3, 1); //SPLICE for removing SLICE for inserting
     favMovies.push("Avatar");
@@ -146,9 +146,9 @@ console.log(whereIsWaldo);
 // Access and console.log "Waldo"
 
 function findIndexNestedArrays(arr, x) {
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      const result = findIndexNestedArrays(arr[i], x);
+  for (let i = 0; i < arr.length; i++) { // starting at the first index and going as long as the array going one by one
+    if (Array.isArray(arr[i])) { // if the index that is being ran is part of the array keep going
+      const result = findIndexNestedArrays(arr[i], x); // result is equal to 
       if (result !== -1) {
         return [i, ...result];
       }
@@ -169,15 +169,15 @@ console.log(whereIsWaldo[2][1][1]);
 // Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
 // For every even number in your loop, log "...human...why you taking pictures of me?...", "...the catnip made me do it...", or "...why does the red dot always get away..." at random.
 ////////////////////////////////
-
- for (let i = 1; i <= 20; i++) {
-  if (i % 2 === 0) {
-    const randomPhrases = [
+ const randomPhrases = [
       "...human...why you taking pictures of me?...",
       "...the catnip made me do it...",
       "...why does the red dot always get away..."
     ];
-    const randomIndex = Math.floor(Math.random() * randomPhrases.length);
+
+ for (let i = 0; i <= 19; i++) {
+  if (i % 2 === 0) {
+    let randomIndex = Math.floor(Math.random() * randomPhrases.length);
     console.log(randomPhrases[randomIndex]);
   } else {
     console.log("Love me, pet me! HSSSSSS!");
@@ -206,3 +206,40 @@ const mid = Math.floor(len / 2); // check if the length of the array is odd or e
     console.log(`The median value of the array is ${median}`);
  }
 
+ /////////////////////////////
+ //HUNGRY FOR MORE
+ // Return of the Closets
+// Below, we've given you examples of Kristyn and Thom's closets modeled as data in JavaScript. Use this data to answer the following questions.
+///////////////////////////////////
+
+const kristynsCloset = [
+  "left shoe",
+  "cowboy boots",
+  "right sock",
+  "GA hoodie",
+  "green pants",
+  "yellow knit hat",
+  "marshmallow peeps"
+];
+
+// Thom's closet is more complicated. Check out this nested data structure!!
+const thomsCloset = [
+  [
+    "grey button-up",
+    "dark grey button-up",
+    "light blue button-up",      // These are Thom's shirts
+    "blue button-up",
+  ],[
+    "grey jeans",
+    "jeans",                    // These are Thom's pants
+    "PJs"
+  ],[
+    "wool mittens",
+    "wool scarf",               // Thom's accessories
+    "raybans"
+  ]
+];
+
+// Kristyn's left shoe has traveled through time and space and turned up in Thom's accessories drawer! Remove Kristyn's shoe from the array and save it to the variable kristynsShoe. Use that variable to add Kristyn's lost shoe to Thom's accessories array.
+
+// Modify your code to put together 3 separate outfits for Kristyn and Thom. Put the output in a sentence to tell us what we'll be wearing. Mix and match!
